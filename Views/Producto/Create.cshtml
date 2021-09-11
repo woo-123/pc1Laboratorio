@@ -1,0 +1,31 @@
+@model pc1Laboratorio.Models.Producto
+
+@{
+    ViewData["Title"] = "Registro Producto";
+}
+    <h1>@ViewData["Title"]</h1>
+<div class="text-center">
+    <h1 class="display-4">Formulario de registro Producto</h1>
+    <form asp-controller="Producto" asp-action="Create" >
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control form-control-sm" type="text" placeholder="Escribe un nombre" aria-label=".form-control-sm" />
+
+        <label asp-for="Categoria" class="control-label"></label>
+        <input asp-for="Categoria" class="form-control" placeholder="Escribe la categoria" />
+
+        <label asp-for="Precio" class="control-label"></label>
+        <input asp-for="Precio" class="form-control" placeholder="Coloce El precio" />
+
+        <label asp-for="Descuento" class="control-label"></label>
+        <input asp-for="Descuento" class="form-control" placeholder="ponga el descuento en Porcentaje" />
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Registrar</button> 
+        </div>
+        <p>
+        <a asp-action='Index'>Back to list</a>
+        </p>
+    </form>
+    <h2>@ViewData["Message"]</h2>
+</div>
